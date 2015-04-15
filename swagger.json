@@ -151,80 +151,6 @@
         ]
       }
     },
-    "/keyword/published/": {
-      "get": {
-        "summary": "published keywords",
-        "description": "published keywords",
-        "operationId": "getPublishedKeywords",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the keyword",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Keyword Response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/keyword"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Keyword"
-        ]
-      }
-    },
-    "/keyword/draft/": {
-      "get": {
-        "summary": "draft keywords",
-        "description": "draft keywords",
-        "operationId": "getDraftKeywords",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the keyword",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "keyword response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/keyword"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Keyword"
-        ]
-      }
-    },
     "/keyword/{keyword_id}/": {
       "get": {
         "summary": "Retrieve a keyword using its slug",
@@ -559,61 +485,10 @@
         ]
       }
     },
-    "/keyword/tags/byweek/": {
-      "get": {
-        "summary": "keyword tags by week",
-        "description": "keyword tags by week",
-        "operationId": "getKeywordTagsByWeek",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the keyword",
-            "required": true,
-            "type": "string"
-          },        
-          {
-            "name": "week",
-            "in": "query",
-            "description": "the week to retrieve tags by",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "year",
-            "in": "query",
-            "description": "the year to retrieve tags by",
-            "required": false,
-            "type": "string"
-          }          
-        ],
-        "responses": {
-          "200": {
-            "description": "Keyword Tag Response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/keyword"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Tags"
-        ]
-      }
-    },
-    "/keyword/tags/byweek/{tag}/keyword/": {
+    "/keyword/tags/{tag}/keyword/": {
       "get": {
         "summary": "keyword tags by week keywords",
-        "description":  "keyword tags by week keywords",
+        "description": "keyword tags by week keywords",
         "operationId": "getKeywordTagCKeyword",
         "parameters": [
           {
@@ -644,43 +519,6 @@
         },
         "tags": [
           "Tags"
-        ]
-      }
-    },
-    "/keyword/byweek/": {
-      "get": {
-        "summary": "keywords by week",
-        "description": "keywords by week",
-        "operationId": "getKeywordsByWeek",
-        "parameters": [
-          {
-            "name": "appid",
-            "in": "query",
-            "description": "your appid for accessing the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "appkey",
-            "in": "query",
-            "description": "your appkey for accessing the keyword",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Keyword Response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/keyword"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Keyword"
         ]
       }
     }
