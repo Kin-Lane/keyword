@@ -1,2 +1,2 @@
-# keyword
-This is a keyword service.
+# Keyword
+This is a keyword API.
