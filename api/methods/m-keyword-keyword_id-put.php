@@ -7,13 +7,9 @@ $app->put($route, function ($keyword_id) use ($app){
  	$request = $app->request();
  	$params = $request->params();
 
-	if(isset($params['post_date'])){ $post_date = mysql_real_escape_string($params['post_date']); } else { $post_date = date('Y-m-d H:i:s'); }
-	if(isset($params['title'])){ $title = mysql_real_escape_string($params['title']); } else { $title = 'No Title'; }
-	if(isset($params['author'])){ $author = mysql_real_escape_string($params['author']); } else { $author = ''; }
-	if(isset($params['summary'])){ $summary = mysql_real_escape_string($params['summary']); } else { $summary = ''; }
-	if(isset($params['body'])){ $body = mysql_real_escape_string($params['body']); } else { $body = ''; }
-	if(isset($params['footer'])){ $footer = mysql_real_escape_string($params['footer']); } else { $footer = ''; }
-	if(isset($params['curated_id'])){ $curated_id = mysql_real_escape_string($params['curated_id']); } else { $curated_id = 0; }
+	if(isset($params['keyword'])){ $keyword = mysql_real_escape_string($params['keyword']); } else { $keyword = 'nothing'; }
+	if(isset($params['description'])){ $description = mysql_real_escape_string($params['description']); } else { $description = ''; }
+	if(isset($params['url'])){ $url = mysql_real_escape_string($params['url']); } else { $url = ''; }
 
   	$Query = "SELECT * FROM keyword WHERE ID = " . $keyword_id;
 	//echo $Query . "<br />";
@@ -23,15 +19,10 @@ $app->put($route, function ($keyword_id) use ($app){
 		{
 		$query = "UPDATE keyword SET";
 
-		$query .= " Title = '" . mysql_real_escape_string($title) . "'";
-		$query .= ", Post_Date = '" . mysql_real_escape_string($post_date) . "'";
+		$query .= " keyword = '" . mysql_real_escape_string($keyword) . "'";
 
-		if($post_date!='') { $query .= ", description = '" . $post_date . "'"; }
-		if($author!='') { $query .= ", Author = '" . $author . "'"; }
-		if($summary!='') { $query .= ", Summary = '" . $summary . "'"; }
-		if($body!='') { $query .= ", Body = '" . $body . "'"; }
-		if($footer!='') { $query .= ", Footer = '" . $footer . "'"; }
-		if($curated_id!='') { $query .= ", News_ID = '" . $curated_id . "'"; }
+		if($description!='') { $query .= ", description = '" . $description . "'"; }
+		if($url!='') { $query .= ", url = '" . $url . "'"; }
 
 		$query .= " WHERE keyword_id = '" . $keyword_id . "'";
 
@@ -41,13 +32,9 @@ $app->put($route, function ($keyword_id) use ($app){
 
 	$F = array();
 	$F['keyword_id'] = $keyword_id;
-	$F['post_date'] = $post_date;
-	$F['title'] = $title;
-	$F['author'] = $author;
-	$F['summary'] = $summary;
-	$F['body'] = $body;
-	$F['footer'] = $footer;
-	$F['curated_id'] = $curated_id;
+	$F['keyword'] = $keyword;
+	$F['description'] = $description;
+	$F['url'] = $url;
 
 	array_push($ReturnObject, $F);
 

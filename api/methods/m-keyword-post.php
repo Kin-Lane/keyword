@@ -8,15 +8,11 @@ $app->post($route, function () use ($app){
  	$request = $app->request();
  	$params = $request->params();
 
-	if(isset($params['post_date'])){ $post_date = mysql_real_escape_string($params['post_date']); } else { $post_date = date('Y-m-d H:i:s'); }
-	if(isset($params['title'])){ $title = mysql_real_escape_string($params['title']); } else { $title = 'No Title'; }
-	if(isset($params['author'])){ $author = mysql_real_escape_string($params['author']); } else { $author = ''; }
-	if(isset($params['summary'])){ $summary = mysql_real_escape_string($params['summary']); } else { $summary = ''; }
-	if(isset($params['body'])){ $body = mysql_real_escape_string($params['body']); } else { $body = ''; }
-	if(isset($params['footer'])){ $footer = mysql_real_escape_string($params['footer']); } else { $footer = ''; }
-	if(isset($params['curated_id'])){ $curated_id = mysql_real_escape_string($params['curated_id']); } else { $curated_id = 0; }
+	if(isset($params['keyword'])){ $keyword = mysql_real_escape_string($params['keyword']); } else { $keyword = 'nothing'; }
+	if(isset($params['description'])){ $description = mysql_real_escape_string($params['description']); } else { $description = ''; }
+	if(isset($params['url'])){ $url = mysql_real_escape_string($params['url']); } else { $url = ''; }
 
-  	$Query = "SELECT * FROM keyword WHERE Title = '" . $title . "' AND Author = '" . $author . "'";
+  	$Query = "SELECT * FROM keyword WHERE keyword = '" . $keyword . "'";
 	//echo $Query . "<br />";
 	$Database = mysql_query($Query) or die('Query failed: ' . mysql_error());
 
@@ -27,15 +23,11 @@ $app->post($route, function () use ($app){
 		}
 	else
 		{
-		$Query = "INSERT INTO keyword(Post_Date,Title,Author,Summary,Body,Footer,News_ID)";
+		$Query = "INSERT INTO keyword(keyword,description,url)";
 		$Query .= " VALUES(";
-		$Query .= "'" . mysql_real_escape_string($post_date) . "',";
-		$Query .= "'" . mysql_real_escape_string($title) . "',";
-		$Query .= "'" . mysql_real_escape_string($author) . "',";
-		$Query .= "'" . mysql_real_escape_string($summary) . "',";
-		$Query .= "'" . mysql_real_escape_string($body) . "',";
-		$Query .= "'" . mysql_real_escape_string($footer) . "',";
-		$Query .= mysql_real_escape_string($curated_id);
+		$Query .= "'" . mysql_real_escape_string($keyword) . "',";
+		$Query .= "'" . mysql_real_escape_string($description) . "',";
+		$Query .= "'" . mysql_real_escape_string($url) . "'";
 		$Query .= ")";
 		//echo $Query . "<br />";
 		mysql_query($Query) or die('Query failed: ' . mysql_error());

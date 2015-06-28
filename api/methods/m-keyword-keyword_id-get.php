@@ -11,37 +11,20 @@ $app->get($route, function ($keyword_id)  use ($app){
 
 	while ($Database = mysql_fetch_assoc($DatabaseResult))
 		{
-
-		$keyword_id = $Database['ID'];
-		$post_date = $Database['Post_Date'];
-		$title = $Database['Title'];
-		$author = $Database['Author'];
-		$summary = $Database['Summary'];
-		$body = $Database['Body'];
-		$footer = $Database['Footer'];
-		$status = $Database['Status'];
-		$buildpage = $Database['Build_Page'];
-		$showonsite = $Database['Show_On_Site'];
-		$image = $Database['Feature_Image'];
-		$curated_id = $Database['News_ID'];
+		$keyword_id = $Database['keyword_id'];
+		$keyword = $Database['keyword'];
+		$description = $Database['description'];
+		$url = $Database['url'];
 
 		// manipulation zone
 
 		$F = array();
 		$F['keyword_id'] = $keyword_id;
-		$F['post_date'] = $post_date;
-		$F['title'] = $title;
-		$F['author'] = $author;
-		$F['summary'] = $summary;
-		$F['body'] = $body;
-		$F['footer'] = $footer;
-		$F['status'] = $status;
-		$F['image'] = $image;
-		$F['build_page'] = $buildpage;
-		$F['show_on_site'] = $showonsite;
-		$F['curated_id'] = $curated_id;
+		$F['keyword'] = $keyword;
+		$F['description'] = $description;
+		$F['url'] = $url;
 
-		$ReturnObject = $F;
+		array_push($ReturnObject, $F);
 		}
 
 		$app->response()->header("Content-Type", "application/json");
