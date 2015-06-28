@@ -56,6 +56,14 @@
         },
         "tags": [
           "Keyword"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       },
       "post": {
@@ -78,61 +86,25 @@
             "type": "string"
           },
           {
-            "name": "post_date",
+            "name": "keyword",
             "in": "query",
-            "description": "date the keyword was posted",
+            "description": "the keyword",
             "required": true,
             "type": "string"
           },
           {
-            "name": "title",
+            "name": "description",
             "in": "query",
-            "description": "ttle for the keyword",
+            "description": "description for the keyword",
             "required": true,
             "type": "string"
           },
           {
-            "name": "author",
+            "name": "url",
             "in": "query",
-            "description": "author of the keyword",
+            "description": "url for the keyword",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "summary",
-            "in": "query",
-            "description": "summary for the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "query",
-            "description": "full text for the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "footer",
-            "in": "query",
-            "description": "curated id the keyword originated from",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "status of the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "curated_id",
-            "in": "query",
-            "description": "full text for the keyword",
-            "required": true,
-            "type": "integer",
-            "format": "id"
           }
         ],
         "responses": {
@@ -148,6 +120,14 @@
         },
         "tags": [
           "Keyword"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       }
     },
@@ -193,6 +173,14 @@
         },
         "tags": [
           "Keyword"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       },
       "put": {
@@ -223,61 +211,25 @@
             "type": "string"
           },
           {
-            "name": "post_date",
+            "name": "keyword",
             "in": "query",
-            "description": "date the keyword was posted",
+            "description": "the keyword",
             "required": true,
             "type": "string"
           },
           {
-            "name": "title",
+            "name": "description",
             "in": "query",
-            "description": "ttle for the keyword",
+            "description": "description for the keyword",
             "required": true,
             "type": "string"
           },
           {
-            "name": "author",
+            "name": "url",
             "in": "query",
-            "description": "author of the keyword",
+            "description": "url for the keyword",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "summary",
-            "in": "query",
-            "description": "summary for the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "query",
-            "description": "full text for the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "footer",
-            "in": "query",
-            "description": "curated id the keyword originated from",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "status of the keyword",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "curated_id",
-            "in": "query",
-            "description": "full text for the keyword",
-            "required": true,
-            "type": "integer",
-            "format": "id"
           }
         ],
         "responses": {
@@ -293,6 +245,14 @@
         },
         "tags": [
           "Keyword"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       },
       "delete": {
@@ -336,6 +296,14 @@
         },
         "tags": [
           "Keyword"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       }
     },
@@ -381,6 +349,14 @@
         },
         "tags": [
           "Tags"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       },
       "post": {
@@ -431,6 +407,14 @@
         },
         "tags": [
           "Tags"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       }
     },
@@ -482,6 +466,14 @@
         },
         "tags": [
           "Tags"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       }
     },
@@ -519,8 +511,28 @@
         },
         "tags": [
           "Tags"
+        ],
+        "security": [
+          {
+            "appid": []
+          },
+          {
+            "appkey": []
+          }
         ]
       }
+    }
+  },
+  "securityDefinitions": {
+    "appid": {
+      "type": "apiKey",
+      "name": "appid",
+      "in": "query"
+    },
+    "appkey": {
+      "type": "apiKey",
+      "name": "appkey",
+      "in": "query"
     }
   },
   "definitions": {
@@ -531,38 +543,17 @@
           "type": "integer",
           "format": "id"
         },
-        "post_date": {
-          "description": "date the keyword was posted",
+        "keyword": {
+          "description": "the keyword",
           "type": "string"
         },
-        "title": {
-          "description": "ttle for the keyword",
+        "description": {
+          "description": "description of the keyword",
           "type": "string"
         },
-        "author": {
-          "description": "author of the keyword",
+        "url": {
+          "description": "url for the keyword",
           "type": "string"
-        },
-        "summary": {
-          "description": "summary for the keyword",
-          "type": "string"
-        },
-        "body": {
-          "description": "full body text of the keyword",
-          "type": "string"
-        },
-        "footer": {
-          "description": "footer text for the keyword",
-          "type": "string"
-        },
-        "status": {
-          "description": "status of the keyword",
-          "type": "string"
-        },
-        "curated_id": {
-          "description": "curated id the keyword originated from",
-          "type": "integer",
-          "format": "id"
         }
       }
     },
