@@ -1,29 +1,25 @@
-- name: Curated API
-  description: As I look through the thousands of tweets, blog posts, and other items
-    I read from across the API space, I curate them as part of my regular research.
-    I put them into each research bucket, and make them availble via each reserch
-    project. You can access via this API, and use in real-time as I curate and manage
-    each week.
-  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-abundance.png
+- name: Kin Lane Keyword API
+  description: Beyond dictionaries, glossaries, and tags, there are keyworeds, which
+    I use to link to specific topics, research, companies, and tooling that I want
+    to higlight as part of my work. Keywords is all about the keyword and url relationships,
+    connecting words with specific resources. This API helps me manage them across
+    my work.
+  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-keyword.png
   x-open-ranking: "0"
   tags:
-  - Kin Lane Curated APi
+  - Kin Lane Keyword API
   created: "2016-04-04"
   modified: "2016-04-04"
   url: ""
   specificationVersion: "0.14"
   apis:
-  - name: Kin Lane Curated
-    description: <p>As I look through the thousands of tweets, blog posts, and other
-      items I read from across the API space, I curate them as part of my regular
-      research. I put them into each research bucket, and make them availble via each
-      reserch project. You can access via this API, and use in real-time as I curate
-      and manage each week.</p>
+  - name: Kin Lane Keyword API
+    description: This is my master org.
     image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kin.png
-    humanURL: https://kin-lane.github.io/curated/
-    baseURL: https://kin-lane.github.io/curated/
+    humanURL: ""
+    baseURL: ""
     tags:
-    - Kin Lane Curated APi
+    - Kin Lane Keyword API
     properties:
     - type: x-openapi-spec
       url: api-commons/openapi-spec.json
@@ -74,7 +70,7 @@
     url: api-commons/api-plan.json
   include:
   - name: Parent
-    url: https://kin-lane.github.io/curated//apis.yaml
+    url: https://kin-lane.github.io/keyword//apis.yaml
   maintainers:
   - FN: Kin Lane
     x-twitter: apievangelist
