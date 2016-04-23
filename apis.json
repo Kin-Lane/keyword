@@ -1,4 +1,4 @@
-[{
+{
 	"name": "Kin Lane Keyword API",
 	"description": "Beyond dictionaries, glossaries, and tags, there are keyworeds, which I use to link to specific topics, research, companies, and tooling that I want to higlight as part of my work. Keywords is all about the keyword and url relationships, connecting words with specific resources. This API helps me manage them across my work.",
 	"image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-keyword.png",
@@ -6,7 +6,7 @@
 	"tags": ["Kin Lane Keyword API"],
 	"created": "2016-04-04",
 	"modified": "2016-04-04",
-	"url": "https://kin-lane.github.io/keyword/"
+	"url": "https://kin-lane.github.io/keyword/",
 	"specificationVersion": "0.14",
 	"apis": [{
 		"name": "Kin Lane Keyword API",
@@ -117,4 +117,4 @@
 		"x-twitter": "apievangelist",
 		"email": "info@apievangelist.com"
 	}]
-}]
+}
